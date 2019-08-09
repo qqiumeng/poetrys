@@ -1,0 +1,271 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>诗词小测试</title>
+
+
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/tops.css' %}">
+    <script src="{% static 'js/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]><![endif]-->
+</head>
+<body style="background:url('{% static "image/桃花1.jpg" %}');position: relative;background-size: 100% 100%;width: 100%;height: 1500px;">
+<!--巨幕部分-->
+<div class="container">
+    <div class="row">
+        <div class="jumbotron" style="text-align: center;opacity: 0.5">
+            <h1><span class="glyphicon glyphicon-book">诗词小知识</span></h1>
+            <p>快来测一测你对中华诗词的了解有多深吧！</p>
+            <canvas id="box1" width="100" height="100" style="top: 135px"></canvas>
+        </div>
+    </div>
+    <div class="menu_back"></div>
+    <!--题目部分-->
+    <div class="panel panel-success">
+        <div class="panel-heading">第一题：单选</div>
+        <div class="panel-body">
+            例题：下面哪首诗歌为王昌龄所作？
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                    望岳
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option1">
+                    出塞
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option1">
+                    使至塞上
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios4" value="option1">
+                    送元二使安西
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-danger">
+        <div class="panel-heading">第二题：多选题</div>
+        <div class="panel-body">
+            例题：下面的诗人中是唐朝诗人的有？
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">
+                    李白
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">
+                    杜甫
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">
+                    骆宾王
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">
+                    李贺
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">
+                    贺知章
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">
+                    杜牧
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">第三题：判断题</div>
+        <div class="panel-body">
+            例题：莫笑农家腊酒浑，丰年足客留鸡豚。
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadio" id="optionsRadios6" value="option2">
+                    对
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadio" id="optionsRadios7" value="option2">
+                    错
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-warning">
+        <div class="panel-heading">第四题：填空题</div>
+        <div class="panel-body">
+            例题：晓镜但愁云鬓改,_________________。
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="在此输入答案">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading">第五题：简答题</div>
+        <div class="panel-body">
+            例题：请简答出你对杜甫这个诗人及他的诗词的认知：
+            <form>
+                <div class="form-group">
+                    <input type="text" height="100px" class="form-control" id="exampleInputEmail2" placeholder="在此输入答案">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--尾部按钮-->
+    <div style="position: absolute;left: 500px;"><a class="btn btn-danger btn-lg" href="首页.html" role="button">确认提交</a>
+    </div>
+    <div style="position: absolute;left: 800px;"><a class="btn btn-danger btn-lg" href="后台网页.html"
+                                                    role="button">重新答题</a></div>
+</div>
+
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+ <script>
+        // 这句话代表的是获取当前网页中的canvas标签，它和getElementByld是不同的
+        // 他是通过标签名来获取
+        //querySelector选择网页中的某个标签，可以获取所有canvas下的内容
+        var a = document.querySelector("canvas");
+        // 他的意思是我们绘制这个a元素的样式是采用2d方式绘制的,3d的绘制方式,
+        // canvas暂时不支持
+        var b = a.getContext("2d");
+
+        function c() {
+            // 首先我们要获得绘制圆的起始坐标
+            // x代表x轴的坐标
+            var x = 50;
+            // y代表y轴的坐标
+            var y = 50;
+            // r代表圆的半径
+            var r = 40;
+            // 获取当前时间
+            var tim = new Date();
+            // 获取当前时间中的小时
+            var myHours = tim.getHours();
+            // 获取当前时间中的分钟
+            var myMins = tim.getMinutes();
+            // 获取当前时间中的秒
+            var mySeconds = tim.getSeconds();
+            //通过下面的公式来计算小时(时针)走过的角度
+            var h = (myHours * 30 - 90) * Math.PI / 180;
+            var m = (myMins * 6 - 90) * Math.PI / 180;
+            var s = (mySeconds * 6 - 90) * Math.PI / 180;
+
+
+            // 表示开始绘制路径，这是固定的写法，代表我们开始绘制一个图案
+            b.beginPath();
+            for (var i = 0; i < 60; i++) {
+                // 让我们绘制的路径以圆心为坐标，向圆心绘制
+                b.moveTo(x, y);
+                //arc(x,y,r,起始角度，结束角度，顺时针（false)/逆时针
+                // (true))
+                b.arc(x, y, r, 6 * i * Math.PI / 180, 6 * (i + 1) * Math.PI / 180, false);
+                //线条颜色
+                b.strokeStyle = 'lightskyblue';
+                //设置钟表线的宽度
+                b.lineWidth = 2
+            }
+            // 表盘刻度
+            //绘制圆的轨迹
+            b.stroke();
+            // 表示结束路径
+            b.closePath();
+            //绘制一个表盘，把上面的覆盖掉
+            b.beginPath();
+            b.fillStyle = 'white';
+            b.arc(x, y, 32, 0, 360, false);
+            // 绘制圆的面的部分
+            b.fill();
+            b.closePath();
+            b.beginPath();
+            //使整点的刻度变长
+            for (var i = 0; i < 60; i++) {
+                // 让我们绘制的路径以圆心为坐标，向圆心绘制
+                b.moveTo(x, y);
+                b.arc(x, y, r, 30 * i * Math.PI / 180, 30 * (i + 1) * Math.PI / 180, false);
+                b.strokeStyle = 'lightskyblue';
+                b.lineWidth = 3;
+            }
+            // 表盘刻度
+            b.stroke();
+            // 表示结束路径
+            b.closePath();
+            //绘制一个表盘，把上面的覆盖掉
+            b.beginPath();
+            //填充颜色
+            b.fillStyle = 'white';
+            b.arc(x, y, 28, 0, 360, false);
+            b.fill();
+            b.closePath();
+            //时针
+            b.beginPath();
+            b.lineWidth = 2;
+            b.moveTo(x, y);
+            //设置线条颜色
+            b.strokeStyle = 'lightpink';
+            b.arc(x, y, r / 2, h, h, false);
+            b.stroke();
+            b.closePath();
+            //分针
+            b.beginPath();
+            b.lineWidth = 2;
+            b.moveTo(x, y);
+            b.arc(x, y, 28, m, m, false);
+            b.strokeStyle = 'lightpink';
+            b.stroke();
+            b.closePath();
+            //秒针
+            b.beginPath();
+            b.lineWidth = 2;
+            b.moveTo(x, y);
+            b.arc(x, y, 30, s, s, false);
+            b.strokeStyle = 'lightpink';
+            b.stroke();
+            b.closePath();
+        }
+
+        //调用
+        setInterval(c, 1000)
+    </script>
+
+
+</body>
+</html>

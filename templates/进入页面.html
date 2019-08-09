@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中华诗词网</title>
+    <style>
+        /*最外层盒子*/
+        #bgc{
+            width: 1520px;
+            position: relative;
+            margin: 0 auto;
+            text-align: center;
+            height: 881px;
+        }
+        /*进入按钮*/
+        #box{
+            width: 80px;
+            height: 40px;
+            position: absolute;
+            bottom: 170px;
+            left: 625px;
+            text-align: center;
+            line-height: 15px;
+            font-family: 楷体;
+            font-size: 23px;
+            /*边框半径*/
+            border-radius: 5px;
+            background-color:red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <embed src="{% static 'music/崔江卉 - 山居秋暝 古筝重奏与弹唱—经典咏流传第五期（Cover 群星）.mp3' %}" hidden="true" loop>
+    <div id="bgc">
+        <img src="{% static 'image/2345_image_file_copy_1.jpg' %}" width="1520" height="881">
+        <a href="{% url 'index' %}" >
+            <input type="button" id="box" value="进入"></a>
+    </div>
+</body>
+</html>

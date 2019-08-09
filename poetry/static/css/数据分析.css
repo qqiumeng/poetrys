@@ -1,0 +1,102 @@
+ *{
+            margin: 0 ;
+            padding: 0}
+        /*头部部分*/
+ #head{
+     width: 100%;
+     height: 120px;
+     position: relative;
+     background:url("../image/u=1725956201,3567701066&fm=214&gp=0.jpg");
+     background-size: 100% 100%
+ }
+ /*中华诗词网*/
+ .read{
+     font-size: 20px;
+     font-family: 宋体;
+     width: 400px;
+     height: 60px;
+     position: absolute;
+     top: 30px;
+     left: 160px;
+     font-weight:bold;
+ }
+ /*搜索框*/
+ .fand{
+    width: 300px;
+    height: 30px;
+    margin: 0 auto;
+    float: none;
+    padding-top: 40px;
+    position: relative;
+}
+ /*模态框*/
+.hand{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+        /*导航栏部分*/
+        ul{
+            list-style: none;
+        }
+        /*外层盒子*/
+        #box{
+            width: 100%;
+            height: 40px;
+            background-color: #ffffe3;
+            margin: 0 auto;
+            position: relative;
+        }
+        /*盒子下的最近的ul里的li标签的设置*/
+        #box>ul>li{
+            float: left;
+            margin-right:10px ;
+        }
+        /*盒子下的ul里的所有li标签的设置*/
+        #box li ul{
+            background-color: #c6d9ff;
+
+        }
+        /*盒子下a标签的设置*/
+        #box a{
+            /*文本装饰*/
+            text-decoration: none;
+            color: black;
+            display: block;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+ /*搜索框前半截*/
+.fand01{
+    width: 150px;
+    height: 30px;
+    border: 1px solid #a9e9ff;
+    position: absolute;
+    background-color: #fff;
+    right: 330px;
+    top: 5px;
+}
+/*搜索框后半截*/
+.fand02{
+    width: 50px;
+    height: 32px;
+    color: white;
+    position: absolute;
+    background-color: #a9e9ff;
+    right: 280px;
+    top: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+/*客服中心的设置*/
+.img01{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    right: 160px;
+    top: 5px;
+}
+

@@ -1,0 +1,414 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/首页.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tops.css' %}">
+    <script src="{% static 'js/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+    <script>
+        //登录注册部分
+        $(document).ready(function () {
+            //打开会员登录
+            //点击登录要实现的动作
+            $("#Login_start_").click(function () {
+                //会员注册部分隐藏
+                $("#regist_container").hide();
+                //小白×出现
+                $("#_close").show();
+                //会员登录整体的框的变化
+                $("#_start").animate({
+                    left: '350px',
+                    height: '520px',
+                    width: '400px'
+                }, 500, function () {
+                    //整个登陆部分显示
+                    $("#login_container").show(500);
+                    //小白×的变化
+                    $("#_close").animate({
+                        height: '40px',
+                        width: '40px'
+                    }, 500);
+                });
+            });
+            //打开会员注册
+            //点击注册按钮
+            $("#Regist_start_").click(function () {
+                //登录部分隐藏
+                $("#login_container").hide();
+                $("#_close").show();
+                //会员登录整体的框的变化
+                $("#_start").animate({
+                    left: '350px',
+                    height: '520px',
+                    width: '400px'
+                }, 500, function () {
+                    //整个注册部分显示
+                    $("#regist_container").show(500);
+                    $("#_close").animate({
+                        height: '40px',
+                        width: '40px'
+                    }, 500);
+                });
+            });
+            //关闭
+            //点击小白×
+            $("#_close").click(function () {
+
+                $("#_close").animate({
+                    height: '0px',
+                    width: '0px'
+                }, 500, function () {
+                    //所有的东西都隐藏
+                    $("#_close").hide(500);
+                    $("#login_container").hide(500);
+                    $("#regist_container").hide(500);
+                    $("#_start").animate({
+                        left: '0px',
+                        height: '0px',
+                        width: '0px'
+                    }, 500);
+                });
+            });
+            //去 注册
+            //点击去注册
+            $("#toRegist").click(function () {
+                //整个登录部分隐藏
+                $("#login_container").hide(500);
+                //整个注册部分显示
+                $("#regist_container").show(500);
+            });
+            //去 登录
+            $("#toLogin").click(function () {
+                //整个注册部分隐藏
+                $("#regist_container").hide(500);
+                // 整个登录部分展示
+                $("#login_container").show(500);
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="head">
+    <div class="read"><span class="glyphicon glyphicon-leaf"></span>中华诗词网</div>
+    <div class="hand">
+
+
+        <!--模态框复制部分-->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"
+                style="background-color: #c5e3ff;">
+            关于我们
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #f8ffee;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">关于我们</h4>
+                    </div>
+                    <div class="modal-body" style="background-color: #f8ffee;">
+                        &emsp;这是一个由个人工作室原创的诗词网页。旨在发扬，传播我国的诗词文化。让更多的人能够了解诗词，欣赏诗词，从而爱上诗词。也是为了向一些诗词爱好者或古风爱好者提供一个小小的平台。<br>（ps：目前此网站还处于初级开发阶段，欢迎各位提出宝贵的意见，我们一定会虚心求教，努力打造一个更加完美的网站）
+                    </div>
+                    <div class="modal-footer" style="background-color: #f8ffee;">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"
+                                style="background-color: #f8ffee;">关闭
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--导航栏部分-->
+<div id="box" style="top: -8px">
+    <ul>
+        <li><a href="">首页</a>
+        </li>
+        <li style="position: relative"><a href="">诗词类别</a>
+            <ul style="position: absolute;z-index: 2">
+                <li>
+                    <a href="https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E5%8F%A4%E4%BB%A3%E8%AF%97%E6%AD%8C/6489868?fr=aladdin">古代诗歌</a>
+                </li>
+                <li>
+                    <a href="https://baike.baidu.com/item/%E8%BF%91%E4%BB%A3%E8%AF%97%E6%AD%8C/8174793?fr=aladdin">近代诗歌</a>
+                </li>
+                <li>
+                    <a href="https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E7%8E%B0%E4%BB%A3%E8%AF%97%E6%AD%8C">现代诗歌</a>
+                </li>
+            </ul>
+        </li>
+        <li style="position: relative"><a href="">诗词历史</a>
+            <ul style="position: absolute;z-index: 2">
+                <li><a href="https://wenku.baidu.com/view/242dc28364ce0508763231126edb6f1aff0071d8.html">古代诗歌发展</a></li>
+                <li>
+                    <a href="https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E7%8E%B0%E4%BB%A3%E8%AF%97%E6%AD%8C%E5%8F%91%E5%B1%95%E5%8F%B2/15589220">现代诗歌发展</a>
+                </li>
+                <li>
+                    <a href="https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E8%AF%97%E6%AD%8C%E5%8F%B2/2015182">中国诗歌史</a>
+                </li>
+            </ul>
+        </li>
+
+
+        <!--关于我们部分-->
+        <li><a href="">诗集推荐</a>
+        </li>
+    </ul>
+    <div class="fand00" style="width: 140px;height: 30px;position: absolute;right: 330px;top: 5px;"><input type="text" placeholder="搜索"></div>
+    <div class="fand002" style="width: 41px;height: 25px;color: white;position: absolute;background-color: #a9e9ff;right: 250px;top: 5px;text-align: center;line-height: 30px;">搜索</div>
+    <a href="" class="img02">我的收藏(3)</a>
+</div>
+
+
+<!--轮播图-->
+<!--最外层的盒子,用来控制图片的位置-->
+<div id="box02" style="top: -1px;">
+    <ul class="slide_img">
+        <li><a href="#"><img src="{% static 'image/timg.gif' %}" width="1500" height="750" alt=""></a></li>
+        <li><a href="#"><img src="{% static 'image/timg.jpg' %}" width="1500" height="750" alt=""></a></li>
+        <li><a href="#"><img src="{% static 'image/2345_image_file_copy_2.jpg' %}" width="1500" height="750" alt=""></a>
+        </li>
+    </ul>
+    <div class="left" style="background:url('{% static "image/精灵图.png" %}') 0 -451px"></div>
+    <div class="right" style="background:url('{% static "image/精灵图.png" %}') 0 -500px"></div>
+    <ul class="points">
+    </ul>
+</div>
+
+
+<!--banner部分-->
+<div id="banner">
+
+
+    <!--置顶部分-->
+    <div id="box03"><span class="glyphicon glyphicon-bed" style="font-size: 25px"></span></div>
+
+
+    <!--登录注册部分的外部准备-->
+    <div id="download01" >
+        <img src="{% static 'image/20140804040627_rKUj8.jpg' %}" width="780" height="530" alt="">
+        <div id="download02">
+            <h1>诗词俱乐部</h1><br>
+            <h3>开始您的诗词之旅，感悟千年文化底蕴，体验诗人的爱恨情仇，深嗅独特的笔墨之香</h3>
+        </div>
+        <!--登录注册部分-->
+        <div id="load">
+            <!--对登陆按钮的设置-->
+            <a id="Login_start_" class="btn btn-danger" style="width:100px;height:40px;border-radius: 0;">登陆</a>
+            <!--对注册按钮的设置-->
+            <a id="Regist_start_" class="btn btn-success" style="width:100px;height:40px;border-radius: 0;">注册</a>
+        </div>
+        <!-- 会员登录  -->
+        <div id='_start'>
+            <!--白色小×-->
+            <div id='_close' style="display: none;">
+                <span class="glyphicon glyphicon-remove"></span>
+            </div>
+            <br/>
+            <!--登录框-->
+            <div id="login_container">
+                <div id="lab2">
+                    <span id="lab_login1">会员登录</span>
+                    <span id="lab_toRegist">
+						&emsp;还没有账号&nbsp;
+						<span id='toRegist' style="color: #EB9316;cursor: pointer;">立即注册</span>
+					</span>
+                </div>
+                <div style="width:330px;">
+                    <span id="lab_type1">手机号/账号登陆</span>
+                </div>
+                <div id="form_container1">
+                    <br/>
+                    <!--文本输入框-->
+                    <input type="text" class="form-control" placeholder="手机号/用户名" id="login_number" value=""/>
+                    <!--密码输入框-->
+                    <input type="password" class="form-control" placeholder="密码" id="login_password"/>
+                    <!--登录按钮-->
+                    <input type="button" value="登录" class="btn btn-success" id="login_btn"/>
+                    <!--忘记密码与记住密码-->
+                    <span id="rememberOrfindPwd">
+						<span>
+							<!--生成一个复选框-->
+							<input id="remember" type="checkbox" style="margin-bottom: -1.5px;">
+						</span>
+					<span style="color:#000000">
+							记住密码&emsp;&emsp;&emsp;&emsp;
+						</span>
+						<span>
+							<input id="remember1" type="checkbox" style="margin-bottom: -1.5px;">
+						</span>
+					<span style="color:#000000">
+							忘记密码
+						</span>
+					</span>
+                </div>
+                <!--设置文字-->
+                <div style="display:block;width:330px;height:40px">
+                    <span id="lab_type2">使用第三方直接登陆</span>
+                </div>
+                <!--设置第三方登录的两个按钮-->
+                <div style="width:330px;height:100px;border-bottom: 1px solid #FFFFFF;">
+                    <br/>
+                    <!--设置QQ登录按钮-->
+                    <button id="login_QQ" type="button" class="btn btn-info">
+                        <img src="{% static 'image/qq32.png' %}" style="width:20px;margin-top:-4px;"/>&emsp;QQ登录
+                    </button>
+                    <!--设置微信登录按钮-->
+                    <button id="login_WB" type="button" class="btn btn-danger">
+                        <img src="{% static 'image/sina32.png' %}" style="width:20px;margin-top:-4px;"/>&emsp;微博登录
+                    </button>
+                </div>
+            </div>
+            <!-- 会员注册 -->
+            <div id='regist_container' style="display: none;">
+                <!--最上方文字设置-->
+                <div id="lab1">
+                    <span id="lab_login">会员注册</span>
+                    <span id="lab_toLogin">
+						&emsp;已有账号&nbsp;
+						<span id='toLogin' style="color: #EB9316;cursor: pointer;">立即登录</span>
+					</span>
+                </div>
+                <!--输入框-->
+                <div id="form_container2" style="padding-top: 25px;">
+                    <input type="text" class="form-control" value="admin" placeholder="用户名" id="regist_account"/>
+                    <input type="password" class="form-control" placeholder="密码" id="regist_password1"/>
+                    <input type="password" class="form-control" placeholder="确认密码" id="regist_password2"/>
+                    <input type="text" class="form-control" placeholder="手机号" id="regist_phone"/>
+                    <input type="text" class="form-control" placeholder="验证码" id="regist_vcode"/>
+                    <!--<button id="getVCode" type="button" class="btn btn-success" >获取验证码</button>-->
+                    <input id="getVCode" type="button" class="btn btn-success" value="点击发送验证码"/>
+                </div>
+                <!--注册按钮-->
+                <input type="button" value="注册" class="btn btn-success" id="regist_btn"/>
+            </div>
+        </div>
+    </div>
+
+
+    <!--文字部分-->
+    <div id="white">
+        <h1>&emsp;<span class="
+glyphicon glyphicon-fire">诗词常识</span></h1>
+        <h3>&emsp;&emsp;古代著名诗人：</h3>
+        <p>&emsp;&emsp;&emsp;&emsp;&emsp;李白，杜甫，王昌龄，白居易，王维，贺知章，陶渊明，杜牧</p>
+        <h3>&emsp;&emsp;近代著名诗人：</h3>
+        <p>&emsp;&emsp;&emsp;&emsp;&emsp;20世纪20年代: 徐志摩 闻一多 李金发 穆木天 <br>&emsp;&emsp;&emsp;&emsp;&emsp;20世纪30年代: 林徽因 戴望舒
+            李广田 艾青 卞之琳 何其芳 南星 &emsp;&emsp;辛笛 覃子豪 纪弦<br>&emsp;&emsp;&emsp;&emsp;&emsp;20世纪40年代: 王佐良 陈敬容 杜运燮 穆旦 罗寄一 郑敏 唐祈
+            &emsp;&emsp;&emsp;袁可嘉 牛汉 屠岸</p>
+        <h1>&emsp;<span class="
+glyphicon glyphicon-fire">诗词小测试</span></h1>
+        <h3>&emsp;&emsp;&emsp;&emsp;请点击下面的图标进入测试</h3>
+        <a id="Login_start_1" class="btn btn-warning" style="width:100px;height:40px;border-radius: 0;"
+           href="{% url 'test' %}">点击进入</a>
+    </div>
+
+
+    <!--古代诗歌部分-->
+    <div class="kongge_left"></div>
+    <div class="kongge">古代诗歌部分</div>
+    <div class="kongge_right"></div>
+    <div id="tow">
+        <img src="{% static 'image/8c1001e93901213f6485ec7a5ee736d12e2e95e6.jpg' %}" width="730" height="460" alt="">
+    </div>
+    <div class="writ">
+        <h1 style="color: #8a6d3b">
+            中国古代诗歌，一般称作旧诗，是指用文言文和传统格律创作的诗，是广义的中国古代诗歌，可以包括各种中国古代的韵文如赋、词、曲等，狭义则仅包括古体诗和近体诗，是人类许多民族在语言的发展中产生的一种文化表现形式</h1>
+    </div>
+
+
+    <!--五个图片的部分-->
+    <div class="all">
+        <div class="one" style="position: absolute;
+left: 20px">
+            <img src="{% static 'image/20151004220203_uWLTS_thumb_700_0.jpg' %}" width="280" height="480" alt="">
+        </div>
+        <div class="two" style="position: absolute;
+left: 320px">
+            <img src="{% static 'image/20151004223643_CakZ5_thumb_700_0.jpg' %}" width="280" height="480" alt="">
+        </div>
+        <div class="three" style="position: absolute;
+left: 620px">
+            <img src="{% static 'image/d7ecc240dd3d5ccede7284e7abf6ec5c.jpeg' %}" width="280" height="480" alt="">
+        </div>
+        <div class="four" style="position: absolute;
+right: 320px">
+            <img src="{% static 'image/20150329131020_LPyxr_thumb_224_0.jpg' %}" width="280" height="480" alt="">
+        </div>
+        <div class="five" style="position: absolute;
+right: 20px">
+            <img src="{% static 'image/20150718184509_xtwmK_thumb_700_0.jpg' %}" width="280" height="480" alt="">
+        </div>
+    </div>
+
+
+    <!--现代诗歌部分-->
+    <div class="kongge_left2"></div>
+    <div class="kongge2">现代诗歌部分</div>
+    <div class="kongge_right2"></div>
+    <div id="tow2">
+        <img src="{% static 'image/960a304e251f95ca99fcc924cb177f3e67095212.jpg' %}" width="630" height="560" alt="">
+    </div>
+    <div class="writ2">
+        <h1 style="color: #8a6d3b">中国现代诗歌是五四运动以来的诗歌。中国现代诗歌主要指新体诗。
+            其特点是用白话语言写作，表现科学、民主的新的时代内容，打破旧诗词格律的束缚，形式上灵活自由。其倡导者和初期作家主要有胡适、刘半农、沈尹默、周作人、俞平伯、刘大白等</h1>
+    </div>
+
+
+    <!--五个图片的部分-->
+    <div class="all2">
+        <div class="one" style="position: absolute;
+left: 20px">
+            <img src="{% static 'image/timg%20(1).jpg' %}" width="280" height="480" alt="">
+        </div>
+        <div class="two" style="position: absolute;
+left: 320px">
+            <img src="{% static 'image/timg%20(2).jpg' %}" width="280" height="480" alt="">
+        </div>
+        <div class="three" style="position: absolute;
+left: 620px">
+            <img src="{% static 'image/timg%20(3).jpg' %}" width="280" height="480" alt="">
+        </div>
+        <div class="four" style="position: absolute;right: 320px">
+            <img src="{% static 'image/timg%20(4).jpg' %}" width="280" height="480" alt="">
+        </div>
+        <div class="five" style="position: absolute;
+right: 20px">
+            <img src="{% static 'image/timg%20(5).jpg' %}" width="280" height="480" alt="">
+        </div>
+    </div>
+</div>
+<!--页尾-->
+<div class="footer" id="footer">
+    <div class="wrap">
+        <div class="num" style="">网站访问量
+            <span class="inner">
+					<i>2</i><i>9</i><i>4</i><i>1</i><i>5</i><i>1</i><i>7</i><i>3</i>
+				</span>
+        </div>
+        <div class="nav_foot">
+            <a href=""> 网站地图</a>&nbsp;&nbsp;<a href=""> 相关链接</a>&nbsp;&nbsp; <a href="" target="_blank"> 影像授权</a>&nbsp;&nbsp;
+            <a href="" target="_blank"> 隐私政策</a>&nbsp;&nbsp; <a href="" target="_blank"> 版权声明</a>&nbsp;&nbsp; <a
+                href=""> 常见问题</a>&nbsp;&nbsp; <a href=""> 联系我们</a>&nbsp;&nbsp; <a
+                href="http://nquestion.com/Answer/Start.aspx?Id=114716" target="_blank"> 调查问卷</a>&nbsp;&nbsp;
+        </div>
+    </div>
+    <div>
+        <div class="copyright">
+            Copyright © 2018 中华诗词网 . All Rights Reserved&nbsp;&nbsp;京ICP备05067311号-1 &nbsp;&nbsp;&nbsp;
+            <a href="http://www.fractal-technology.com/" target="_blank">网站建设</a>：
+            <a href="http://www.fractal-technology.com/" target="_blank">北京分形科技</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
